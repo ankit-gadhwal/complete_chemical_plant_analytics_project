@@ -76,7 +76,7 @@ async def get_dataset(dataset_uid: uuid.UUID,session: AsyncSession = Depends(get
                 temperature=ParameterStatistics(
                     min=dataset.min_temperature,
                     max= dataset.max_temperature,
-                    average= dataset.average_pressure
+                    average= dataset.average_temperature
                 )
             ),
             equipment_summary=dataset.equipment_summary,

@@ -69,22 +69,31 @@ class TestDatasetUpload:
     @pytest.mark.asyncio
     async def test_upload_unverified_user_blocked(self, client: AsyncClient):
         """Unverified users should be blocked from uploading (403 UserNotVerified)."""
-        # Register but don't verify
         payload = {
             "first_name": "Unverf",
             "last_name": "Dset",
             "username": "unverdst",
-            "email": "unverf_dataset@example.com",
+            "email": f"unverf_{uuid.uuid4().hex[:6]}@example.com",
             "password": "SomePwd1",
         }
         await client.post("/auth/signup", json=payload)
+        
+        # Explicitly mark user as unverified in DB to test the guard
+        from src.db.main import AsyncSessionLocal
+        from src.db.models import User
+        from sqlmodel import select
+        async with AsyncSessionLocal() as db_session:
+            stmt = select(User).where(User.email == payload["email"])
+            res = await db_session.exec(stmt)
+            u = res.first()
+            if u:
+                u.is_verified = False
+                await db_session.commit()
+
         login = await client.post(
             "/auth/login",
             json={"email": payload["email"], "password": payload["password"]},
         )
-        if login.status_code != 200:
-            pytest.skip("Login blocked for unverified user – endpoint guards correctly")
-
         token = login.json().get("access_token", "")
         resp = await client.post(
             "/dataset/upload",

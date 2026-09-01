@@ -66,24 +66,11 @@ class UserService:
         if user_exists:
             raise UserAlreadyExists()
         new_user = await self.create_user(user_data, session)
-        token = create_url_safe_token({"email": email})
-
-        domain = Config.DOMAIN.rstrip("/")
-        if not domain.startswith("http://") and not domain.startswith("https://"):
-            domain = f"https://{domain}"
-
-        link = f"{domain}/auth/verify/{token}"
-
-        if background_tasks:
-            background_tasks.add_task(send_verification_email, email, link)
-        else:
-            import asyncio
-            asyncio.create_task(send_verification_email(email, link))
 
         return UserSignupResponse(
-            message="Account created successfully! A verification email has been sent to your email address. Please verify your email before logging in.",
+            message="Account created and verified successfully! You can now log in directly.",
             user=new_user,
-            verification_link=link,
+            verification_link=None,
         )
 
     
@@ -115,7 +102,7 @@ class UserService:
                         password_hash=generate_password_hash(password),
                         role=UserRole.USER,          # Every new user is a normal user
                         is_active=True,
-                        is_verified=False,           # User must verify via email link
+                        is_verified=True,            # Auto-verified directly on signup
                         )
         session.add(new_user)
         await session.commit()

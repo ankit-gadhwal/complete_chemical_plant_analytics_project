@@ -1,9 +1,10 @@
+from fastembed import TextEmbedding
+
 class EmbeddingsService:
     """
-    Wrapper around SentenceTransformer.
-
-    Responsible for generating embeddings
-    for documents and user queries.
+    Wrapper around FastEmbed (ONNX Quantized Embeddings).
+    Ultra-lightweight (~80MB RAM), CPU-optimized, zero PyTorch requirement,
+    and no API rate limits.
     """
 
     def __init__(
@@ -16,40 +17,24 @@ class EmbeddingsService:
     @property
     def model(self):
         if self._model is None:
-            from sentence_transformers import SentenceTransformer
-            self._model = SentenceTransformer(self.model_name)
+            self._model = TextEmbedding(model_name=self.model_name)
         return self._model
 
     def embed_documents(self, documents: list[str]) -> list[list[float]]:
         """
-        generate embeddings for multiple documents.
+        Generate embeddings for multiple document chunks.
         """
-        embeddings = self.model.encode(
-            documents,
-            normalize_embeddings=True,
-            convert_to_tensor=True,
-        )
-
-        return embeddings.cpu().tolist()
+        if not documents:
+            return []
+        embeddings = list(self.model.embed(documents))
+        return [emb.tolist() for emb in embeddings]
 
     def embed_query(self, query: str) -> list[float]:
-        """Generate embeddings for a single query"""
-        embedding = self.model.encode(
-            query,
-            normalize_embeddings=True,
-            convert_to_tensor=True,
-        )
-
-        return embedding.cpu().tolist()
+        """
+        Generate embeddings for a single user query.
+        """
+        embedding = list(self.model.embed([query]))[0]
+        return embedding.tolist()
 
 
 embedding_service = EmbeddingsService()
-
-# embedding_service = EmbeddingsService()
-
-# vector = embedding_service.embed_query(
-#     "What is pump pressure?"
-# )
-
-# print(len(vector))
-    

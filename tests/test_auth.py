@@ -29,9 +29,8 @@ class TestSignup:
         resp = await client.post("/auth/signup", json=payload)
         assert resp.status_code == 200, resp.text
         data = resp.json()
-        assert "verification email" in data["message"].lower()
         assert data["user"]["email"] == payload["email"]
-        assert data["user"]["is_verified"] is False  # must NOT be auto-verified
+        assert data["user"]["is_verified"] is True  # auto-verified directly on signup
 
     @pytest.mark.asyncio
     async def test_signup_duplicate_email(self, client: AsyncClient, test_user_data, registered_user):

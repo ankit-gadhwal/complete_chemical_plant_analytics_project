@@ -53,13 +53,11 @@ async def login_user(
 @auth_router.post("/signup", response_model=UserSignupResponse)
 async def create_user_account(
     user_data: UserCreateModel,
-    background_tasks: BackgroundTasks,
     session: AsyncSession = Depends(get_session),
 ):
     result = await user_service.create_user_account(
         user_data=user_data,
         session=session,
-        background_tasks=background_tasks,
     )
     return result
 

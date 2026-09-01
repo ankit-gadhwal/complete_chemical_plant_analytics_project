@@ -51,23 +51,26 @@ class DatasetService:
             for column in important_columns:
                 if pd.isna(row[column]):
                     missing_columns.append(column)
+            eq_name = str(row.get("Equipment Name") or row.get("equipment_name", "Unknown"))
+            eq_type = str(row.get("Type") or row.get("type", "Unknown"))
             if len(missing_columns) == len(important_columns):
                 inactive_equipment.append(
                     {
-                        "equipment_name": row["Equipment Name"],
-                        "equipment_type": row["type"],
-                        "reason": "All operating parameters are missing."
+                        "equipment_name": eq_name,
+                        "equipment_type": eq_type,
+                        "reason": "All operating parameters are missing (Equipment Offline)."
                     }
                 )
                 valid_dataframe = valid_dataframe.drop(index)
             elif len(missing_columns) > 0:
                 missing_data.append(
                     {
-                        "equipment_name":row["Equipment Name"],
-                        "equipment_type": row["Type"],
+                        "equipment_name": eq_name,
+                        "equipment_type": eq_type,
                         "missing_columns": missing_columns
                     }
                 )
+                valid_dataframe = valid_dataframe.drop(index)
         logger.info(
             f"Inactive Equipment: {len(inactive_equipment)}, "
             f"Equipment with partial missing data: {len(missing_data)}")

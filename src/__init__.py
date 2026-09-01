@@ -19,6 +19,11 @@ app = FastAPI(
     title="Chemical Equipment Analytics API",
     # lifespan=lifespan  # add the lifespan event to our application
 )
+
+@app.get("/health", status_code=200)
+async def health_check():
+    return {"status": "healthy"}
+
 register_error_handlers(app)
 register_middleware(app)
 app.include_router(

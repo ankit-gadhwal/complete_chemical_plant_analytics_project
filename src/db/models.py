@@ -134,7 +134,7 @@ class User(SQLModel,table=True):
     username: str
     first_name: str = Field(nullable = True)
     last_name: str = Field(nullable=True)
-    is_verified: bool = False
+    is_verified: bool = True
     is_active: bool = Field(default=True)
     role: UserRole = Field(default=UserRole.USER)
     email: str
