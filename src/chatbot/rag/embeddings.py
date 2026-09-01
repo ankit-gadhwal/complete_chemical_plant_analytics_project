@@ -11,7 +11,7 @@ class EmbeddingsService:
     rate limit / quota errors on the Google AI Studio free tier.
     """
 
-    def __init__(self, model_name: str = "models/text-embedding-004"):
+    def __init__(self, model_name: str = "models/gemini-embedding-001"):
         self.model_name = model_name
         self._model = None
 
