@@ -21444,3 +21444,501 @@ src.error.MissingCSVColumns: ['Flowrate', 'Temperature', 'Type', 'Equipment Name
 2026-09-02 00:37:59,024 | INFO | 127.0.0.1 123 POST /auth/signup 200 3875.12 ms
 2026-09-02 00:38:05,011 | INFO | 127.0.0.1 123 POST /auth/login 200 2654.59 ms
 2026-09-02 00:38:13,295 | INFO | 127.0.0.1 123 GET /auth/logout 200 8114.87 ms
+2026-09-02 00:56:33,614 | INFO | 127.0.0.1 123 POST /auth/signup 200 5175.93 ms
+2026-09-02 00:56:38,635 | INFO | 127.0.0.1 123 POST /auth/login 200 1683.23 ms
+2026-09-02 00:56:44,435 | INFO | Dataset upload started: doc_test.csv
+2026-09-02 00:56:44,436 | INFO | Validating uploaded file: doc_test.csv
+2026-09-02 00:56:44,436 | INFO | File validation completed
+2026-09-02 00:56:44,436 | INFO | Saving uploaded file: doc_test.csv
+2026-09-02 00:56:44,438 | INFO | File stored at: storage\uploads\ff3f1d69-673a-4e52-b496-916883682846.csv
+2026-09-02 00:56:44,879 | INFO | Creating dataset record for file: doc_test.csv
+2026-09-02 00:56:46,500 | INFO | Dataset created successfully. UID=600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:46,504 | INFO | Background processing task created
+2026-09-02 00:56:46,504 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7688.32 ms
+2026-09-02 00:56:46,504 | INFO | Background dataset processing task starting for: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:46,504 | INFO | Started processing dataset: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:46,505 | INFO | Fetching dataset: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:46,505 | INFO | Requested dataset_uid: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:46,505 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:56:47,887 | INFO | Dataset found
+2026-09-02 00:56:48,243 | INFO | Reading CSV file
+2026-09-02 00:56:48,244 | INFO | Reading CSV file: storage\uploads\ff3f1d69-673a-4e52-b496-916883682846.csv
+2026-09-02 00:56:48,257 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:56:48,258 | INFO | Validating CSV columns
+2026-09-02 00:56:48,258 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:56:48,258 | ERROR | Dataset processing failed: 600b2418-92b7-47a2-9e6d-52921634ab1c
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:56:48,275 | ERROR | Background dataset processing error for 600b2418-92b7-47a2-9e6d-52921634ab1c: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:56:53,865 | INFO | Fetching dataset: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:53,865 | INFO | Requested dataset_uid: 600b2418-92b7-47a2-9e6d-52921634ab1c
+2026-09-02 00:56:53,865 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:56:54,289 | INFO | Dataset found
+2026-09-02 00:56:55,606 | INFO | 127.0.0.1 123 POST /documents/upload 201 7158.99 ms
+2026-09-02 00:56:59,480 | INFO | 127.0.0.1 123 POST /auth/signup 200 3678.47 ms
+2026-09-02 00:57:05,089 | INFO | 127.0.0.1 123 POST /auth/login 200 2030.71 ms
+2026-09-02 00:57:11,481 | INFO | Dataset upload started: doc_test.csv
+2026-09-02 00:57:11,481 | INFO | Validating uploaded file: doc_test.csv
+2026-09-02 00:57:11,481 | INFO | File validation completed
+2026-09-02 00:57:11,481 | INFO | Saving uploaded file: doc_test.csv
+2026-09-02 00:57:11,483 | INFO | File stored at: storage\uploads\7911c7de-f524-420c-95be-983e11eeb932.csv
+2026-09-02 00:57:11,911 | INFO | Creating dataset record for file: doc_test.csv
+2026-09-02 00:57:13,620 | INFO | Dataset created successfully. UID=81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:13,620 | INFO | Background processing task created
+2026-09-02 00:57:13,621 | INFO | 127.0.0.1 123 POST /dataset/upload 200 8345.20 ms
+2026-09-02 00:57:13,621 | INFO | Background dataset processing task starting for: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:13,621 | INFO | Started processing dataset: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:13,621 | INFO | Fetching dataset: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:13,621 | INFO | Requested dataset_uid: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:13,621 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:57:14,943 | INFO | Dataset found
+2026-09-02 00:57:15,280 | INFO | Reading CSV file
+2026-09-02 00:57:15,281 | INFO | Reading CSV file: storage\uploads\7911c7de-f524-420c-95be-983e11eeb932.csv
+2026-09-02 00:57:15,285 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:57:15,285 | INFO | Validating CSV columns
+2026-09-02 00:57:15,286 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:57:15,286 | ERROR | Dataset processing failed: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:57:15,287 | ERROR | Background dataset processing error for 81540a43-ea17-4fef-8ded-bf1c34e1bc81: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:57:21,091 | INFO | Fetching dataset: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:21,092 | INFO | Requested dataset_uid: 81540a43-ea17-4fef-8ded-bf1c34e1bc81
+2026-09-02 00:57:21,092 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:57:21,526 | INFO | Dataset found
+2026-09-02 00:57:22,696 | INFO | 127.0.0.1 123 POST /documents/upload 201 7229.17 ms
+2026-09-02 00:57:26,684 | INFO | 127.0.0.1 123 POST /auth/signup 200 3808.69 ms
+2026-09-02 00:57:31,809 | INFO | 127.0.0.1 123 POST /auth/login 200 1783.61 ms
+2026-09-02 00:57:37,422 | INFO | Dataset upload started: doc_test.csv
+2026-09-02 00:57:37,422 | INFO | Validating uploaded file: doc_test.csv
+2026-09-02 00:57:37,423 | INFO | File validation completed
+2026-09-02 00:57:37,423 | INFO | Saving uploaded file: doc_test.csv
+2026-09-02 00:57:37,424 | INFO | File stored at: storage\uploads\c425ff59-8120-4058-860d-ce6da3873d69.csv
+2026-09-02 00:57:37,834 | INFO | Creating dataset record for file: doc_test.csv
+2026-09-02 00:57:39,543 | INFO | Dataset created successfully. UID=d27df1d1-95bb-4ef0-96ce-f38f6c122510
+2026-09-02 00:57:39,544 | INFO | Background processing task created
+2026-09-02 00:57:39,544 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7549.27 ms
+2026-09-02 00:57:39,544 | INFO | Background dataset processing task starting for: d27df1d1-95bb-4ef0-96ce-f38f6c122510
+2026-09-02 00:57:39,545 | INFO | Started processing dataset: d27df1d1-95bb-4ef0-96ce-f38f6c122510
+2026-09-02 00:57:39,545 | INFO | Fetching dataset: d27df1d1-95bb-4ef0-96ce-f38f6c122510
+2026-09-02 00:57:39,545 | INFO | Requested dataset_uid: d27df1d1-95bb-4ef0-96ce-f38f6c122510
+2026-09-02 00:57:39,545 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:57:41,162 | INFO | Dataset found
+2026-09-02 00:57:41,586 | INFO | Reading CSV file
+2026-09-02 00:57:41,586 | INFO | Reading CSV file: storage\uploads\c425ff59-8120-4058-860d-ce6da3873d69.csv
+2026-09-02 00:57:41,589 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:57:41,589 | INFO | Validating CSV columns
+2026-09-02 00:57:41,589 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:57:41,590 | ERROR | Dataset processing failed: d27df1d1-95bb-4ef0-96ce-f38f6c122510
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:57:41,590 | ERROR | Background dataset processing error for d27df1d1-95bb-4ef0-96ce-f38f6c122510: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:57:41,774 | INFO | 127.0.0.1 123 POST /documents/upload 401 3.28 ms
+2026-09-02 00:57:45,507 | INFO | 127.0.0.1 123 POST /auth/signup 200 3727.51 ms
+2026-09-02 00:57:50,668 | INFO | 127.0.0.1 123 POST /auth/login 200 1810.78 ms
+2026-09-02 00:57:56,256 | INFO | Fetching dataset: 8aa95861-0539-43f4-a434-9ef11c18d566
+2026-09-02 00:57:56,257 | INFO | Requested dataset_uid: 8aa95861-0539-43f4-a434-9ef11c18d566
+2026-09-02 00:57:56,257 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:57:56,678 | WARNING | Dataset not found: 8aa95861-0539-43f4-a434-9ef11c18d566
+2026-09-02 00:57:56,842 | INFO | 127.0.0.1 123 POST /documents/upload 404 5981.60 ms
+2026-09-02 00:58:00,822 | INFO | 127.0.0.1 123 POST /auth/signup 200 3968.12 ms
+2026-09-02 00:58:05,795 | INFO | 127.0.0.1 123 POST /auth/login 200 1797.26 ms
+2026-09-02 00:58:12,150 | INFO | Dataset upload started: doc_retr.csv
+2026-09-02 00:58:12,150 | INFO | Validating uploaded file: doc_retr.csv
+2026-09-02 00:58:12,150 | INFO | File validation completed
+2026-09-02 00:58:12,150 | INFO | Saving uploaded file: doc_retr.csv
+2026-09-02 00:58:12,151 | INFO | File stored at: storage\uploads\28cc2021-a50d-4394-b12c-82639b256aa8.csv
+2026-09-02 00:58:12,567 | INFO | Creating dataset record for file: doc_retr.csv
+2026-09-02 00:58:14,546 | INFO | Dataset created successfully. UID=4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:14,546 | INFO | Background processing task created
+2026-09-02 00:58:14,546 | INFO | 127.0.0.1 123 POST /dataset/upload 200 8581.95 ms
+2026-09-02 00:58:14,547 | INFO | Background dataset processing task starting for: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:14,547 | INFO | Started processing dataset: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:14,547 | INFO | Fetching dataset: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:14,547 | INFO | Requested dataset_uid: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:14,547 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:58:15,920 | INFO | Dataset found
+2026-09-02 00:58:16,257 | INFO | Reading CSV file
+2026-09-02 00:58:16,258 | INFO | Reading CSV file: storage\uploads\28cc2021-a50d-4394-b12c-82639b256aa8.csv
+2026-09-02 00:58:16,262 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:58:16,262 | INFO | Validating CSV columns
+2026-09-02 00:58:16,262 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:58:16,262 | ERROR | Dataset processing failed: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:58:16,263 | ERROR | Background dataset processing error for 4f13a163-069c-4742-9d2a-ee23297ca9c9: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:58:22,089 | INFO | Fetching dataset: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:22,089 | INFO | Requested dataset_uid: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:22,089 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:58:22,528 | INFO | Dataset found
+2026-09-02 00:58:23,752 | INFO | 127.0.0.1 123 POST /documents/upload 201 7283.74 ms
+2026-09-02 00:58:29,528 | INFO | Fetching dataset: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:29,529 | INFO | Requested dataset_uid: 4f13a163-069c-4742-9d2a-ee23297ca9c9
+2026-09-02 00:58:29,529 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:58:29,991 | INFO | Dataset found
+2026-09-02 00:58:30,182 | INFO | 127.0.0.1 123 GET /documents/dataset/4f13a163-069c-4742-9d2a-ee23297ca9c9 200 6248.51 ms
+2026-09-02 00:58:34,010 | INFO | 127.0.0.1 123 POST /auth/signup 200 3629.59 ms
+2026-09-02 00:58:39,586 | INFO | 127.0.0.1 123 POST /auth/login 200 2150.52 ms
+2026-09-02 00:58:45,423 | INFO | Dataset upload started: doc_retr.csv
+2026-09-02 00:58:45,423 | INFO | Validating uploaded file: doc_retr.csv
+2026-09-02 00:58:45,429 | INFO | File validation completed
+2026-09-02 00:58:45,429 | INFO | Saving uploaded file: doc_retr.csv
+2026-09-02 00:58:45,431 | INFO | File stored at: storage\uploads\1d14f289-28ce-4f3c-af15-2fb85efdbb49.csv
+2026-09-02 00:58:45,922 | INFO | Creating dataset record for file: doc_retr.csv
+2026-09-02 00:58:47,642 | INFO | Dataset created successfully. UID=e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:47,643 | INFO | Background processing task created
+2026-09-02 00:58:47,643 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7840.33 ms
+2026-09-02 00:58:47,643 | INFO | Background dataset processing task starting for: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:47,644 | INFO | Started processing dataset: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:47,644 | INFO | Fetching dataset: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:47,644 | INFO | Requested dataset_uid: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:47,644 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:58:49,000 | INFO | Dataset found
+2026-09-02 00:58:49,358 | INFO | Reading CSV file
+2026-09-02 00:58:49,358 | INFO | Reading CSV file: storage\uploads\1d14f289-28ce-4f3c-af15-2fb85efdbb49.csv
+2026-09-02 00:58:49,363 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:58:49,363 | INFO | Validating CSV columns
+2026-09-02 00:58:49,363 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:58:49,363 | ERROR | Dataset processing failed: e2485c05-077c-49cf-be74-a1858a173fb2
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:58:49,364 | ERROR | Background dataset processing error for e2485c05-077c-49cf-be74-a1858a173fb2: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:58:55,319 | INFO | Fetching dataset: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:55,319 | INFO | Requested dataset_uid: e2485c05-077c-49cf-be74-a1858a173fb2
+2026-09-02 00:58:55,319 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:58:55,852 | INFO | Dataset found
+2026-09-02 00:58:57,267 | INFO | 127.0.0.1 123 POST /documents/upload 201 7737.94 ms
+2026-09-02 00:59:03,478 | INFO | 127.0.0.1 123 GET /documents/c5cb5d48-49f2-4708-90d9-862184e0f322 200 6011.46 ms
+2026-09-02 00:59:06,968 | INFO | 127.0.0.1 123 POST /auth/signup 200 3311.93 ms
+2026-09-02 00:59:13,610 | INFO | 127.0.0.1 123 POST /auth/login 200 2383.89 ms
+2026-09-02 00:59:19,650 | INFO | 127.0.0.1 123 GET /documents/f7254bba-b8d2-48c0-9794-c79cc68a17ff 404 5839.97 ms
+2026-09-02 00:59:23,997 | INFO | 127.0.0.1 123 POST /auth/signup 200 4337.28 ms
+2026-09-02 00:59:29,329 | INFO | 127.0.0.1 123 POST /auth/login 200 1881.50 ms
+2026-09-02 00:59:34,929 | INFO | Dataset upload started: doc_retr.csv
+2026-09-02 00:59:34,929 | INFO | Validating uploaded file: doc_retr.csv
+2026-09-02 00:59:34,930 | INFO | File validation completed
+2026-09-02 00:59:34,930 | INFO | Saving uploaded file: doc_retr.csv
+2026-09-02 00:59:34,932 | INFO | File stored at: storage\uploads\e34875e8-2c06-422c-95a7-e26806e4c3c7.csv
+2026-09-02 00:59:35,358 | INFO | Creating dataset record for file: doc_retr.csv
+2026-09-02 00:59:37,392 | INFO | Dataset created successfully. UID=3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:37,392 | INFO | Background processing task created
+2026-09-02 00:59:37,393 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7885.16 ms
+2026-09-02 00:59:37,393 | INFO | Background dataset processing task starting for: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:37,393 | INFO | Started processing dataset: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:37,393 | INFO | Fetching dataset: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:37,393 | INFO | Requested dataset_uid: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:37,393 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 00:59:38,805 | INFO | Dataset found
+2026-09-02 00:59:39,172 | INFO | Reading CSV file
+2026-09-02 00:59:39,172 | INFO | Reading CSV file: storage\uploads\e34875e8-2c06-422c-95a7-e26806e4c3c7.csv
+2026-09-02 00:59:39,177 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 00:59:39,177 | INFO | Validating CSV columns
+2026-09-02 00:59:39,177 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 00:59:39,177 | ERROR | Dataset processing failed: 3432c5c2-d11d-4be1-b457-b94997350642
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:59:39,179 | ERROR | Background dataset processing error for 3432c5c2-d11d-4be1-b457-b94997350642: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 00:59:44,772 | INFO | Fetching dataset: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:44,773 | INFO | Requested dataset_uid: 3432c5c2-d11d-4be1-b457-b94997350642
+2026-09-02 00:59:44,773 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 00:59:45,215 | INFO | Dataset found
+2026-09-02 00:59:46,549 | INFO | 127.0.0.1 123 POST /documents/upload 201 7202.41 ms
+2026-09-02 00:59:52,968 | INFO | 127.0.0.1 123 DELETE /documents/28653d4e-8b79-4374-a70a-ddced6c32971 200 6234.04 ms
+2026-09-02 00:59:56,730 | INFO | 127.0.0.1 123 POST /auth/signup 200 3754.19 ms
+2026-09-02 01:00:01,977 | INFO | 127.0.0.1 123 POST /auth/login 200 1960.46 ms
+2026-09-02 01:00:07,636 | INFO | Dataset upload started: doc_retr.csv
+2026-09-02 01:00:07,637 | INFO | Validating uploaded file: doc_retr.csv
+2026-09-02 01:00:07,637 | INFO | File validation completed
+2026-09-02 01:00:07,637 | INFO | Saving uploaded file: doc_retr.csv
+2026-09-02 01:00:07,638 | INFO | File stored at: storage\uploads\00401686-5ec7-4b13-9562-034504cecbaf.csv
+2026-09-02 01:00:08,062 | INFO | Creating dataset record for file: doc_retr.csv
+2026-09-02 01:00:09,713 | INFO | Dataset created successfully. UID=08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:09,713 | INFO | Background processing task created
+2026-09-02 01:00:09,713 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7526.84 ms
+2026-09-02 01:00:09,714 | INFO | Background dataset processing task starting for: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:09,714 | INFO | Started processing dataset: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:09,714 | INFO | Fetching dataset: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:09,714 | INFO | Requested dataset_uid: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:09,714 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:00:11,091 | INFO | Dataset found
+2026-09-02 01:00:11,445 | INFO | Reading CSV file
+2026-09-02 01:00:11,446 | INFO | Reading CSV file: storage\uploads\00401686-5ec7-4b13-9562-034504cecbaf.csv
+2026-09-02 01:00:11,450 | INFO | CSV loaded successfully (1 rows)
+2026-09-02 01:00:11,450 | INFO | Validating CSV columns
+2026-09-02 01:00:11,450 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:00:11,450 | ERROR | Dataset processing failed: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:00:11,451 | ERROR | Background dataset processing error for 08602cb0-3d48-401a-ab51-c05324ee8dc1: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:00:17,190 | INFO | Fetching dataset: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:17,190 | INFO | Requested dataset_uid: 08602cb0-3d48-401a-ab51-c05324ee8dc1
+2026-09-02 01:00:17,190 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:00:17,672 | INFO | Dataset found
+2026-09-02 01:00:18,992 | INFO | 127.0.0.1 123 POST /documents/upload 201 7370.26 ms
+2026-09-02 01:00:19,203 | INFO | 127.0.0.1 123 DELETE /documents/8e976b19-b38d-4c95-b961-da99eb23da3c 401 0.81 ms
+2026-09-02 01:00:23,904 | INFO | 127.0.0.1 123 POST /auth/signup 200 4696.10 ms
+2026-09-02 01:00:28,872 | INFO | 127.0.0.1 123 POST /auth/login 200 1703.79 ms
+2026-09-02 01:00:34,701 | INFO | Dataset upload started: test_dataset.csv
+2026-09-02 01:00:34,702 | INFO | Validating uploaded file: test_dataset.csv
+2026-09-02 01:00:34,702 | INFO | File validation completed
+2026-09-02 01:00:34,702 | INFO | Saving uploaded file: test_dataset.csv
+2026-09-02 01:00:34,704 | INFO | File stored at: storage\uploads\505d9fbf-de8f-4c5e-94ad-bc3a7fa089a9.csv
+2026-09-02 01:00:35,449 | INFO | Creating dataset record for file: test_dataset.csv
+2026-09-02 01:00:37,193 | INFO | Dataset created successfully. UID=0fa63618-8091-429a-a5fc-08892f49e4a6
+2026-09-02 01:00:37,193 | INFO | Background processing task created
+2026-09-02 01:00:37,193 | INFO | 127.0.0.1 123 POST /dataset/upload 200 8141.82 ms
+2026-09-02 01:00:37,194 | INFO | Background dataset processing task starting for: 0fa63618-8091-429a-a5fc-08892f49e4a6
+2026-09-02 01:00:37,194 | INFO | Started processing dataset: 0fa63618-8091-429a-a5fc-08892f49e4a6
+2026-09-02 01:00:37,194 | INFO | Fetching dataset: 0fa63618-8091-429a-a5fc-08892f49e4a6
+2026-09-02 01:00:37,194 | INFO | Requested dataset_uid: 0fa63618-8091-429a-a5fc-08892f49e4a6
+2026-09-02 01:00:37,194 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:00:38,938 | INFO | Dataset found
+2026-09-02 01:00:39,288 | INFO | Reading CSV file
+2026-09-02 01:00:39,289 | INFO | Reading CSV file: storage\uploads\505d9fbf-de8f-4c5e-94ad-bc3a7fa089a9.csv
+2026-09-02 01:00:39,293 | INFO | CSV loaded successfully (3 rows)
+2026-09-02 01:00:39,293 | INFO | Validating CSV columns
+2026-09-02 01:00:39,293 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:00:39,294 | ERROR | Dataset processing failed: 0fa63618-8091-429a-a5fc-08892f49e4a6
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:00:39,294 | ERROR | Background dataset processing error for 0fa63618-8091-429a-a5fc-08892f49e4a6: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:00:43,149 | INFO | 127.0.0.1 123 POST /auth/signup 200 3642.98 ms
+2026-09-02 01:00:48,230 | INFO | 127.0.0.1 123 POST /auth/login 200 1742.73 ms
+2026-09-02 01:00:54,241 | INFO | Dataset upload started: data.txt
+2026-09-02 01:00:54,242 | INFO | Validating uploaded file: data.txt
+2026-09-02 01:00:54,242 | WARNING | Invalid file extension: data.txt
+2026-09-02 01:00:54,476 | INFO | 127.0.0.1 123 POST /dataset/upload 400 6056.52 ms
+2026-09-02 01:00:54,491 | INFO | 127.0.0.1 123 POST /dataset/upload 401 2.83 ms
+2026-09-02 01:00:58,245 | INFO | 127.0.0.1 123 POST /auth/signup 200 3746.77 ms
+2026-09-02 01:01:02,530 | INFO | 127.0.0.1 123 POST /auth/login 200 2037.71 ms
+2026-09-02 01:01:08,270 | INFO | 127.0.0.1 123 POST /dataset/upload 403 5559.47 ms
+2026-09-02 01:01:12,251 | INFO | 127.0.0.1 123 POST /auth/signup 200 3936.55 ms
+2026-09-02 01:01:17,975 | INFO | 127.0.0.1 123 POST /auth/login 200 1926.56 ms
+2026-09-02 01:01:24,676 | INFO | Fetching datasets (page=1, page_size=5)
+2026-09-02 01:01:25,531 | INFO | Returned 0 datasets
+2026-09-02 01:01:25,531 | INFO | 127.0.0.1 123 GET /dataset/ 200 7369.08 ms
+2026-09-02 01:01:31,982 | INFO | 127.0.0.1 123 POST /auth/signup 200 6198.18 ms
+2026-09-02 01:01:37,840 | INFO | 127.0.0.1 123 POST /auth/login 200 1730.42 ms
+2026-09-02 01:01:43,910 | INFO | Fetching datasets (page=1, page_size=2)
+2026-09-02 01:01:44,587 | INFO | Returned 0 datasets
+2026-09-02 01:01:44,588 | INFO | 127.0.0.1 123 GET /dataset/ 200 6573.21 ms
+2026-09-02 01:01:44,792 | INFO | 127.0.0.1 123 GET /dataset/ 401 0.56 ms
+2026-09-02 01:01:48,282 | INFO | 127.0.0.1 123 POST /auth/signup 200 3484.21 ms
+2026-09-02 01:01:53,744 | INFO | 127.0.0.1 123 POST /auth/login 200 1719.62 ms
+2026-09-02 01:01:59,394 | INFO | Dataset upload started: test_dataset.csv
+2026-09-02 01:01:59,395 | INFO | Validating uploaded file: test_dataset.csv
+2026-09-02 01:01:59,395 | INFO | File validation completed
+2026-09-02 01:01:59,395 | INFO | Saving uploaded file: test_dataset.csv
+2026-09-02 01:01:59,397 | INFO | File stored at: storage\uploads\61a503ab-5627-4b04-8287-7837858a1cc9.csv
+2026-09-02 01:01:59,822 | INFO | Creating dataset record for file: test_dataset.csv
+2026-09-02 01:02:01,635 | INFO | Dataset created successfully. UID=553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:01,635 | INFO | Background processing task created
+2026-09-02 01:02:01,636 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7718.91 ms
+2026-09-02 01:02:01,636 | INFO | Background dataset processing task starting for: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:01,636 | INFO | Started processing dataset: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:01,637 | INFO | Fetching dataset: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:01,637 | INFO | Requested dataset_uid: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:01,637 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:02:02,986 | INFO | Dataset found
+2026-09-02 01:02:03,328 | INFO | Reading CSV file
+2026-09-02 01:02:03,328 | INFO | Reading CSV file: storage\uploads\61a503ab-5627-4b04-8287-7837858a1cc9.csv
+2026-09-02 01:02:03,331 | INFO | CSV loaded successfully (3 rows)
+2026-09-02 01:02:03,331 | INFO | Validating CSV columns
+2026-09-02 01:02:03,331 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:02:03,331 | ERROR | Dataset processing failed: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:02:03,332 | ERROR | Background dataset processing error for 553a8639-5494-4b62-9a14-d4d17b7fa3e6: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:02:08,934 | INFO | Fetching dataset: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:08,934 | INFO | Requested dataset_uid: 553a8639-5494-4b62-9a14-d4d17b7fa3e6
+2026-09-02 01:02:08,935 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:02:09,697 | INFO | Dataset found
+2026-09-02 01:02:09,697 | INFO | 127.0.0.1 123 GET /dataset/553a8639-5494-4b62-9a14-d4d17b7fa3e6 200 6189.14 ms
+2026-09-02 01:02:13,499 | INFO | 127.0.0.1 123 POST /auth/signup 200 3591.00 ms
+2026-09-02 01:02:19,120 | INFO | 127.0.0.1 123 POST /auth/login 200 2052.93 ms
+2026-09-02 01:02:24,706 | INFO | Fetching dataset: 4140eb53-ec3a-47e5-9d2a-93a40189265e
+2026-09-02 01:02:24,706 | INFO | Requested dataset_uid: 4140eb53-ec3a-47e5-9d2a-93a40189265e
+2026-09-02 01:02:24,706 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:02:25,123 | WARNING | Dataset not found: 4140eb53-ec3a-47e5-9d2a-93a40189265e
+2026-09-02 01:02:25,291 | INFO | 127.0.0.1 123 GET /dataset/4140eb53-ec3a-47e5-9d2a-93a40189265e 404 5972.71 ms
+2026-09-02 01:02:28,779 | INFO | 127.0.0.1 123 POST /auth/signup 200 3478.51 ms
+2026-09-02 01:02:34,141 | INFO | 127.0.0.1 123 POST /auth/login 200 1988.72 ms
+2026-09-02 01:02:39,828 | INFO | Dataset upload started: test_dataset.csv
+2026-09-02 01:02:39,829 | INFO | Validating uploaded file: test_dataset.csv
+2026-09-02 01:02:39,829 | INFO | File validation completed
+2026-09-02 01:02:39,829 | INFO | Saving uploaded file: test_dataset.csv
+2026-09-02 01:02:39,834 | INFO | File stored at: storage\uploads\045f535d-b33b-4daa-bef1-d680ffd4b734.csv
+2026-09-02 01:02:40,278 | INFO | Creating dataset record for file: test_dataset.csv
+2026-09-02 01:02:41,998 | INFO | Dataset created successfully. UID=07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:41,998 | INFO | Background processing task created
+2026-09-02 01:02:41,999 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7673.86 ms
+2026-09-02 01:02:41,999 | INFO | Background dataset processing task starting for: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:41,999 | INFO | Started processing dataset: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:41,999 | INFO | Fetching dataset: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:41,999 | INFO | Requested dataset_uid: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:41,999 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:02:43,636 | INFO | Dataset found
+2026-09-02 01:02:44,058 | INFO | Reading CSV file
+2026-09-02 01:02:44,059 | INFO | Reading CSV file: storage\uploads\045f535d-b33b-4daa-bef1-d680ffd4b734.csv
+2026-09-02 01:02:44,063 | INFO | CSV loaded successfully (3 rows)
+2026-09-02 01:02:44,063 | INFO | Validating CSV columns
+2026-09-02 01:02:44,063 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:02:44,063 | ERROR | Dataset processing failed: 07b861da-daad-45b2-841d-2283adbf90f9
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:02:44,064 | ERROR | Background dataset processing error for 07b861da-daad-45b2-841d-2283adbf90f9: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:02:50,120 | INFO | Fetching dataset: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:50,121 | INFO | Requested dataset_uid: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:50,121 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:02:50,591 | INFO | Dataset found
+2026-09-02 01:02:50,592 | INFO | Updating dataset: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:50,592 | INFO | Fetching dataset: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:50,592 | INFO | Requested dataset_uid: 07b861da-daad-45b2-841d-2283adbf90f9
+2026-09-02 01:02:50,592 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:02:50,685 | INFO | Dataset found
+2026-09-02 01:02:52,428 | INFO | Dataset updated successfully
+2026-09-02 01:02:52,429 | INFO | 127.0.0.1 123 PATCH /dataset/07b861da-daad-45b2-841d-2283adbf90f9 200 8186.42 ms
+2026-09-02 01:02:56,042 | INFO | 127.0.0.1 123 POST /auth/signup 200 3432.81 ms
+2026-09-02 01:03:01,045 | INFO | 127.0.0.1 123 POST /auth/login 200 1753.81 ms
+2026-09-02 01:03:06,641 | INFO | Dataset upload started: test_dataset.csv
+2026-09-02 01:03:06,641 | INFO | Validating uploaded file: test_dataset.csv
+2026-09-02 01:03:06,641 | INFO | File validation completed
+2026-09-02 01:03:06,641 | INFO | Saving uploaded file: test_dataset.csv
+2026-09-02 01:03:06,642 | INFO | File stored at: storage\uploads\bc3c782f-d44a-4a33-b4e6-896e0327f97a.csv
+2026-09-02 01:03:07,160 | INFO | Creating dataset record for file: test_dataset.csv
+2026-09-02 01:03:09,070 | INFO | Dataset created successfully. UID=41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:09,071 | INFO | Background processing task created
+2026-09-02 01:03:09,071 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7841.08 ms
+2026-09-02 01:03:09,071 | INFO | Background dataset processing task starting for: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:09,071 | INFO | Started processing dataset: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:09,071 | INFO | Fetching dataset: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:09,072 | INFO | Requested dataset_uid: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:09,072 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:03:10,452 | INFO | Dataset found
+2026-09-02 01:03:10,810 | INFO | Reading CSV file
+2026-09-02 01:03:10,811 | INFO | Reading CSV file: storage\uploads\bc3c782f-d44a-4a33-b4e6-896e0327f97a.csv
+2026-09-02 01:03:10,816 | INFO | CSV loaded successfully (3 rows)
+2026-09-02 01:03:10,817 | INFO | Validating CSV columns
+2026-09-02 01:03:10,817 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:03:10,817 | ERROR | Dataset processing failed: 41b2f917-1a58-4b5c-8845-e317015ede31
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:03:10,818 | ERROR | Background dataset processing error for 41b2f917-1a58-4b5c-8845-e317015ede31: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:03:16,438 | INFO | Fetching dataset: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:16,438 | INFO | Requested dataset_uid: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:16,438 | INFO | Type: <class 'uuid.UUID'>
+2026-09-02 01:03:16,873 | INFO | Dataset found
+2026-09-02 01:03:16,874 | INFO | Deleting dataset: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:16,874 | INFO | Fetching dataset: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:16,874 | INFO | Requested dataset_uid: 41b2f917-1a58-4b5c-8845-e317015ede31
+2026-09-02 01:03:16,874 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:03:16,961 | INFO | Dataset found
+2026-09-02 01:03:17,827 | INFO | Dataset deleted successfully
+2026-09-02 01:03:17,828 | INFO | 127.0.0.1 123 DELETE /dataset/41b2f917-1a58-4b5c-8845-e317015ede31 200 6819.60 ms
+2026-09-02 01:03:21,621 | INFO | 127.0.0.1 123 POST /auth/signup 200 3754.83 ms
+2026-09-02 01:03:26,764 | INFO | 127.0.0.1 123 POST /auth/login 200 1766.08 ms
+2026-09-02 01:03:32,398 | INFO | Dataset upload started: test_dataset.csv
+2026-09-02 01:03:32,398 | INFO | Validating uploaded file: test_dataset.csv
+2026-09-02 01:03:32,399 | INFO | File validation completed
+2026-09-02 01:03:32,399 | INFO | Saving uploaded file: test_dataset.csv
+2026-09-02 01:03:32,400 | INFO | File stored at: storage\uploads\95236fce-9459-4833-8067-a12197458670.csv
+2026-09-02 01:03:32,829 | INFO | Creating dataset record for file: test_dataset.csv
+2026-09-02 01:03:34,647 | INFO | Dataset created successfully. UID=7bd98bec-3978-482e-83ee-52931bbf287a
+2026-09-02 01:03:34,647 | INFO | Background processing task created
+2026-09-02 01:03:34,648 | INFO | 127.0.0.1 123 POST /dataset/upload 200 7714.89 ms
+2026-09-02 01:03:34,648 | INFO | Background dataset processing task starting for: 7bd98bec-3978-482e-83ee-52931bbf287a
+2026-09-02 01:03:34,648 | INFO | Started processing dataset: 7bd98bec-3978-482e-83ee-52931bbf287a
+2026-09-02 01:03:34,648 | INFO | Fetching dataset: 7bd98bec-3978-482e-83ee-52931bbf287a
+2026-09-02 01:03:34,648 | INFO | Requested dataset_uid: 7bd98bec-3978-482e-83ee-52931bbf287a
+2026-09-02 01:03:34,648 | INFO | Type: <class 'asyncpg.pgproto.pgproto.UUID'>
+2026-09-02 01:03:36,422 | INFO | Dataset found
+2026-09-02 01:03:36,776 | INFO | Reading CSV file
+2026-09-02 01:03:36,776 | INFO | Reading CSV file: storage\uploads\95236fce-9459-4833-8067-a12197458670.csv
+2026-09-02 01:03:36,780 | INFO | CSV loaded successfully (3 rows)
+2026-09-02 01:03:36,780 | INFO | Validating CSV columns
+2026-09-02 01:03:36,780 | WARNING | Validating columns: {'Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name'}
+2026-09-02 01:03:36,781 | ERROR | Dataset processing failed: 7bd98bec-3978-482e-83ee-52931bbf287a
+Traceback (most recent call last):
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 228, in process_dataset
+    self.validate_csv_columns(dataframe)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ankit\OneDrive\Desktop\chemical_equipment_backend\src\datasets\service.py", line 141, in validate_csv_columns
+    raise MissingCSVColumns(list(missing_columns))
+src.error.MissingCSVColumns: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:03:36,782 | ERROR | Background dataset processing error for 7bd98bec-3978-482e-83ee-52931bbf287a: ['Type', 'Flowrate', 'Temperature', 'Pressure', 'Equipment Name']
+2026-09-02 01:03:36,975 | INFO | 127.0.0.1 123 DELETE /dataset/7bd98bec-3978-482e-83ee-52931bbf287a 401 0.60 ms
+2026-09-02 01:03:40,788 | INFO | 127.0.0.1 123 POST /auth/signup 200 3805.93 ms
+2026-09-02 01:03:44,590 | INFO | 127.0.0.1 123 POST /auth/signup 200 3589.65 ms
+2026-09-02 01:03:50,136 | INFO | 127.0.0.1 123 POST /auth/signup 403 1765.79 ms
+2026-09-02 01:03:50,162 | INFO | 127.0.0.1 123 POST /auth/signup 422 1.73 ms
+2026-09-02 01:03:50,170 | INFO | 127.0.0.1 123 POST /auth/signup 422 1.70 ms
+2026-09-02 01:03:54,006 | INFO | 127.0.0.1 123 POST /auth/signup 200 3829.63 ms
+2026-09-02 01:03:59,067 | INFO | 127.0.0.1 123 POST /auth/login 200 1836.21 ms
+2026-09-02 01:04:02,943 | INFO | 127.0.0.1 123 POST /auth/signup 200 3653.53 ms
+2026-09-02 01:04:08,410 | INFO | 127.0.0.1 123 POST /auth/login 400 1890.06 ms
+2026-09-02 01:04:10,412 | INFO | 127.0.0.1 123 POST /auth/login 400 1990.33 ms
+2026-09-02 01:04:14,077 | INFO | 127.0.0.1 123 POST /auth/signup 200 3653.04 ms
+2026-09-02 01:04:16,274 | INFO | 127.0.0.1 123 POST /auth/login 200 2015.25 ms
+2026-09-02 01:04:20,045 | INFO | 127.0.0.1 123 POST /auth/signup 200 3532.64 ms
+2026-09-02 01:04:21,711 | INFO | 127.0.0.1 123 GET /auth/verify/eyJlbWFpbCI6InZlcmlmeV9hNTUwYTJAZXhhbXBsZS5jb20ifQ.apcovA.ubRFwVSN4-N6SHw1rMGk-hBG-I0 200 1489.87 ms
+2026-09-02 01:04:23,282 | INFO | 127.0.0.1 123 GET /auth/verify/this.is.not.a.valid.token 401 1.37 ms
+2026-09-02 01:04:27,244 | INFO | 127.0.0.1 123 POST /auth/signup 200 3956.66 ms
+2026-09-02 01:04:32,560 | INFO | 127.0.0.1 123 POST /auth/login 200 1745.20 ms
+2026-09-02 01:04:36,797 | INFO | 127.0.0.1 123 GET /auth/refresh_token 200 4062.24 ms
+2026-09-02 01:04:40,385 | INFO | 127.0.0.1 123 POST /auth/signup 200 3579.36 ms
+2026-09-02 01:04:45,524 | INFO | 127.0.0.1 123 POST /auth/login 200 1763.34 ms
+2026-09-02 01:04:53,857 | INFO | 127.0.0.1 123 GET /auth/logout 200 8148.31 ms

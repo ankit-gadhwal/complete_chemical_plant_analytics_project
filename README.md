@@ -29,8 +29,9 @@
 
 ### ⚡ 3. Ultra-Low Memory & Cloud Optimized (Render Free Tier Ready)
 - **Zero Server RAM Embeddings**: Embeddings are computed via Google's Gemini Cloud API, keeping server RAM usage under **~80 MB** (well below Render's 512 MB free tier limit).
-- **Batched Request Throttling**: Chunks are processed in small groups with pauses to prevent hitting free-tier API rate limits.
-- **Asynchronous & Non-Blocking**: Heavy I/O and PDF parsing are offloaded to worker threads and Celery queues.
+- **Native Single-Request Batching**: Chunks are processed in batches of 40 in a single HTTP request, using only ~3 requests for a 120-chunk document (<4% of Google AI Studio's 100 req/min free limit).
+- **Automatic Exponential Backoff**: Built-in automatic retry handling for rate limits without crashing or timing out.
+- **Asynchronous & Non-Blocking**: Heavy I/O and PDF parsing are offloaded to worker threads via `asyncio.to_thread`.
 - **Instant Health Endpoint**: `/health` for automated uptime monitoring and keeping free cloud instances warm 24/7.
 
 ### 🔐 4. Secure Authentication & Access Control
@@ -56,7 +57,7 @@ graph TD
     subgraph Data & Storage Layer
         DatasetSvc --> DB[(PostgreSQL Database)]
         DocSvc --> VectorDB[(ChromaDB Vector Store)]
-        DocSvc --> CloudEmbed[Google Gemini Embedding API]
+        DocSvc --> CloudEmbed[Google Gemini Native Batch Embedding API]
     end
 
     subgraph AI & LLM Engine
