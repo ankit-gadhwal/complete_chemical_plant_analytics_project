@@ -24,7 +24,7 @@
 - **Text-to-SQL Assistant**: Queries PostgreSQL relational databases directly using natural language to perform calculations, lookups, and aggregations.
 - **Document RAG (Retrieval-Augmented Generation)**:
   - Upload chemical engineering manuals, SOPs, and equipment documentation (`.pdf`, `.docx`, `.txt`).
-  - Semantic vector retrieval using **Google Gemini `gemini-embedding-001` (Cloud API with 0 MB Server RAM footprint)** and **ChromaDB**.
+  - Semantic vector retrieval using **NVIDIA NIM `nvidia/nemotron-3-embed-1b` (Cloud API with 0 MB Server RAM footprint)** and **ChromaDB**.
   - Uses state-of-the-art LLMs (Groq LLaMA 3.3 70B & Google Gemini) with multi-turn chat history.
 
 ### ⚡ 3. Ultra-Low Memory & Cloud Optimized (Render Free Tier Ready)
