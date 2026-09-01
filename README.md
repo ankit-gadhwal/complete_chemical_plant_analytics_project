@@ -24,17 +24,18 @@
 - **Text-to-SQL Assistant**: Queries PostgreSQL relational databases directly using natural language to perform calculations, lookups, and aggregations.
 - **Document RAG (Retrieval-Augmented Generation)**:
   - Upload chemical engineering manuals, SOPs, and equipment documentation (`.pdf`, `.docx`, `.txt`).
-  - Semantic vector retrieval using **FastEmbed (ONNX quantized `BAAI/bge-small-en-v1.5`)** and **ChromaDB**.
+  - Semantic vector retrieval using **Google Gemini `text-embedding-004` (Cloud API with 0 MB Server RAM footprint)** and **ChromaDB**.
   - Uses state-of-the-art LLMs (Groq LLaMA 3.3 70B & Google Gemini) with multi-turn chat history.
 
-### ⚡ 3. Ultra-Low Memory & Cloud Optimized
-- **FastEmbed (Zero PyTorch Dependency)**: Uses CPU-optimized ONNX runtime for embeddings (~80 MB RAM footprint vs. >600 MB with standard PyTorch), easily running within Render's free tier.
+### ⚡ 3. Ultra-Low Memory & Cloud Optimized (Render Free Tier Ready)
+- **Zero Server RAM Embeddings**: Embeddings are computed via Google's Gemini Cloud API, keeping server RAM usage under **~80 MB** (well below Render's 512 MB free tier limit).
+- **Batched Request Throttling**: Chunks are processed in small groups with pauses to prevent hitting free-tier API rate limits.
 - **Asynchronous & Non-Blocking**: Heavy I/O and PDF parsing are offloaded to worker threads and Celery queues.
-- **Instant Health Endpoint**: `/health` for automated uptime monitoring and keeping free cloud instances warm.
+- **Instant Health Endpoint**: `/health` for automated uptime monitoring and keeping free cloud instances warm 24/7.
 
 ### 🔐 4. Secure Authentication & Access Control
 - **JWT-Based Authentication**: Access tokens + refresh tokens with Redis token revocation blocklist.
-- **Direct Verification**: Instant user onboarding and signup without mandatory external email dependency.
+- **Direct User Verification**: Instant onboarding and account activation without email delivery bottlenecks.
 - **Data Isolation**: User-level and dataset-level role-based authorization guards.
 
 ---
@@ -55,7 +56,7 @@ graph TD
     subgraph Data & Storage Layer
         DatasetSvc --> DB[(PostgreSQL Database)]
         DocSvc --> VectorDB[(ChromaDB Vector Store)]
-        DocSvc --> FastEmbed[FastEmbed ONNX CPU]
+        DocSvc --> CloudEmbed[Google Gemini Embedding API]
     end
 
     subgraph AI & LLM Engine
@@ -82,7 +83,7 @@ chemical_equipment_backend/
 ├── src/
 │   ├── auth/                     # JWT authentication, routes, schemas & services
 │   ├── chatbot/                  # Chat engine, Text-to-SQL & RAG pipeline
-│   │   └── rag/                  # Chunker, Document loader, FastEmbed, ChromaDB
+│   │   └── rag/                  # Chunker, Document loader, Gemini embeddings, ChromaDB
 │   ├── datasets/                 # CSV ingestion, data validation & telemetry analytics
 │   ├── db/                       # SQLModel engine, session, and models
 │   ├── Equipment/                # Equipment REST endpoints and repository
@@ -90,7 +91,7 @@ chemical_equipment_backend/
 │   ├── config.py                 # Pydantic environment configuration
 │   ├── error.py                  # Global custom exception handlers
 │   └── __init__.py               # FastAPI application factory & routes
-├── tests/                        # Comprehensive Pytest test suite (30+ tests)
+├── tests/                        # Comprehensive Pytest test suite (33+ tests)
 ├── Dockerfile                    # Multi-stage production container
 ├── render.yaml                   # Infrastructure-as-Code for Render.com
 ├── requirements.txt              # Production Python dependencies
@@ -105,7 +106,7 @@ chemical_equipment_backend/
 - **Python 3.11+**
 - **PostgreSQL Database**
 - **Redis Server** (optional for local dev, required for Celery worker & token blocklist)
-- **API Keys**: [Groq API Key](https://console.groq.com) or [Google Gemini API Key](https://aistudio.google.com/)
+- **API Keys**: [Groq API Key](https://console.groq.com) and [Google Gemini API Key](https://aistudio.google.com/)
 
 ---
 
@@ -157,7 +158,7 @@ chemical_equipment_backend/
    ```
 
 7. **Access the application**:
-   - **Frontend UI**: Open `frontend/index.html` in your browser (or serve via Live Server / StaticFiles).
+   - **Frontend UI**: Open `frontend/index.html` in your browser.
    - **Interactive API Docs (Swagger UI)**: [http://localhost:8000/docs](http://localhost:8000/docs)
    - **Health Check**: [http://localhost:8000/health](http://localhost:8000/health)
 
@@ -177,16 +178,21 @@ pytest tests/test_auth.py tests/test_datasets.py tests/test_documents.py -v
 
 ---
 
-## 🌐 Deploying to Render.com
+## 🌐 Deployment Guide
 
+### Backend (Render.com)
 The repository is pre-configured with [`render.yaml`](render.yaml) for 1-click deployment on Render:
-
 1. Connect your GitHub repository to **Render.com**.
 2. Create a new **Blueprint Instance** and select this repo.
 3. Provide your environment variables (`DATABASE_URL`, `GROQ_API_KEY`, `GOOGLE_API_KEY`).
-4. Render will automatically build the Docker container and start both the **FastAPI Web Service** and the **Celery Background Worker**.
+4. Set up a free 10-minute ping using [Cron-job.org](https://cron-job.org) targeting `https://your-app.onrender.com/health` to keep Render warm 24/7.
 
-> **Pro Tip**: To keep Render's free tier from sleeping, set up a free 10-minute ping using [Cron-job.org](https://cron-job.org) or [UptimeRobot](https://uptimerobot.com) targeting `https://your-app.onrender.com/health`.
+### Frontend (Vercel)
+1. Import the repository into **Vercel**.
+2. Under **Project Settings → Environment Variables**, add:
+   - **Key**: `VITE_API_BASE_URL`
+   - **Value**: `https://your-backend.onrender.com` (without trailing slash)
+3. Deploy!
 
 ---
 

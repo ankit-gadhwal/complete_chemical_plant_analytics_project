@@ -37,8 +37,6 @@ langchain-text-splitters>=0.0.1
 groq>=0.4.2
 google-generativeai>=0.4.1
 chromadb>=0.4.24
-# FastEmbed: Lightweight ONNX embeddings (~80MB RAM vs >600MB with PyTorch)
-fastembed>=0.3.0
 pypdf>=4.1.0
 docx2txt>=0.8
 

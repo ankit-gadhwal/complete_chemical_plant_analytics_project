@@ -173,7 +173,7 @@ def register_error_handlers(app: FastAPI):
                                   "Unsupported content type."
                               ))
     app.add_exception_handler(FileTooLarge,create_exception_handler(
-                       status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+                       status.HTTP_413_CONTENT_TOO_LARGE,
                        "File size exceeds 5 MB.",),)
 
     app.add_exception_handler(
